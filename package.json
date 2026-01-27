@@ -1,0 +1,19 @@
+{
+  "name": "nx-caching",
+  "version": "1.0.0",
+  "description": "Examples and learning material for Nx caching",
+  "private": true,
+  "scripts": {
+    "build": "nx run-many --target=build --all",
+    "test": "nx run-many --target=test --all",
+    "cli": "node packages/cli/dist/index.js"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "nx": "^17.0.0",
+    "typescript": "^5.0.0"
+  }
+}

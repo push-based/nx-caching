@@ -1,0 +1,11 @@
+{
+  "name": "@nx-caching/cli-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node src/test.js"
+  },
+  "devDependencies": {
+    "@nx-caching/cli": "*"
+  }
+}

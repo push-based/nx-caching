@@ -1,0 +1,14 @@
+{
+  "name": "@nx-caching/core",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo 'No tests defined for core'"
+  },
+  "dependencies": {
+    "@nx-caching/models": "*",
+    "@nx-caching/utils": "*"
+  }
+}

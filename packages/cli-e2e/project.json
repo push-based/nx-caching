@@ -1,0 +1,12 @@
+{
+  "name": "cli-e2e",
+  "targets": {
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm test",
+        "cwd": "packages/cli-e2e"
+      }
+    }
+  }
+}
