@@ -15,7 +15,7 @@
         "command": "node generate-report.js",
         "cwd": "packages/utils"
       },
-      "outputs": ["{projectRoot}/dist/report.txt"],
+      "outputs": ["{projectRoot}/tmp/report.txt"],
       "cache": true
     },
     "test": {

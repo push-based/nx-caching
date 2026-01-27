@@ -23,10 +23,10 @@ Summary:
 - Status: OK
 `;
 
-  const outputDir = path.join(__dirname, 'dist');
+  const outputDir = path.join(__dirname, 'tmp');
   const outputFile = path.join(outputDir, 'report.txt');
 
-  // Ensure dist directory exists
+  // Ensure tmp directory exists
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }

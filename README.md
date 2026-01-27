@@ -75,7 +75,7 @@ npx nx reset
 npx nx run utils:report
 ```
 
-The report target produces a `.txt` file with a timestamp, showing how dynamic content can cause issues with caching when the output changes on each run even though the inputs haven't changed.
+The report target produces a `.txt` file in the `tmp` directory with a timestamp, showing how dynamic content can cause issues with caching when the output changes on each run even though the inputs haven't changed.
 
 ## Project Structure
 
