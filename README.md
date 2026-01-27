@@ -91,5 +91,27 @@ nx-caching/
 
 - `npm run build` - Build all packages
 - `npm run test` - Run all tests
-- `npm run cli` - Run the CLI application
+- `npm run cli` - Run the CLI application (default command)
+
+## CLI Commands
+
+The CLI supports the following commands:
+
+1. **Default command** (no arguments):
+   ```bash
+   node packages/cli/dist/index.js
+   ```
+   Demonstrates the user service by creating and greeting users.
+
+2. **timestamp**:
+   ```bash
+   node packages/cli/dist/index.js timestamp
+   ```
+   Displays the current timestamp. Output changes every time it runs.
+
+3. **timestamp-changeduntil**:
+   ```bash
+   node packages/cli/dist/index.js timestamp-changeduntil
+   ```
+   Displays a timestamp that changes every 10 seconds. Useful for demonstrating cache behavior with time-based outputs.
 
