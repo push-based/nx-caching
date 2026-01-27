@@ -59,6 +59,24 @@ npx nx run-many --target=build --all
 
 You'll see `[local cache]` indicators showing that Nx retrieved the build outputs from cache instead of rebuilding.
 
+### Caching Problems Demo
+
+The `utils` package includes a `report` target that demonstrates caching problems:
+
+```bash
+# First run - generates report with current timestamp
+npx nx run utils:report
+
+# Second run - uses cached output (same timestamp)
+npx nx run utils:report
+
+# Reset cache to see different timestamp
+npx nx reset
+npx nx run utils:report
+```
+
+The report target produces a `.txt` file with a timestamp, showing how dynamic content can cause issues with caching when the output changes on each run even though the inputs haven't changed.
+
 ## Project Structure
 
 ```
@@ -95,23 +113,25 @@ nx-caching/
 
 ## CLI Commands
 
-The CLI supports the following commands:
+The CLI supports the following options:
 
-1. **Default command** (no arguments):
+1. **Default** (no arguments):
    ```bash
    node packages/cli/dist/index.js
    ```
    Demonstrates the user service by creating and greeting users.
 
-2. **timestamp**:
+2. **Timestamp** (`-t` or `--timestamp`):
    ```bash
-   node packages/cli/dist/index.js timestamp
+   node packages/cli/dist/index.js -t
+   node packages/cli/dist/index.js --timestamp
    ```
    Displays the current timestamp. Output changes every time it runs.
 
-3. **timestamp-changeduntil**:
+3. **Changeduntil** (`-c` or `--changeduntil`):
    ```bash
-   node packages/cli/dist/index.js timestamp-changeduntil
+   node packages/cli/dist/index.js -c
+   node packages/cli/dist/index.js --changeduntil
    ```
    Displays a timestamp that changes every 10 seconds. Useful for demonstrating cache behavior with time-based outputs.
 

@@ -9,6 +9,15 @@
       },
       "outputs": ["{projectRoot}/dist"]
     },
+    "report": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node src/generate-report.js",
+        "cwd": "packages/utils"
+      },
+      "outputs": ["{projectRoot}/dist/report.txt"],
+      "cache": true
+    },
     "test": {
       "executor": "nx:run-commands",
       "options": {

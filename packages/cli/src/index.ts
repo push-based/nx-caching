@@ -7,20 +7,24 @@ import { UserService, getConfig } from '@nx-caching/core';
  */
 function main() {
   const args = process.argv.slice(2);
-  const command = args[0];
-
+  
   const config = getConfig();
   console.log(`\n${config.appName} v${config.version}`);
   console.log('='.repeat(40));
 
-  // Handle timestamp commands
-  if (command === 'timestamp') {
+  // Parse short args
+  const hasTimestamp = args.includes('-t') || args.includes('--timestamp');
+  const hasChangeduntil = args.includes('-c') || args.includes('--changeduntil');
+
+  // Handle timestamp with -t flag
+  if (hasTimestamp) {
     console.log('\nCurrent timestamp:', new Date().toISOString());
     console.log('');
     return;
   }
 
-  if (command === 'timestamp-changeduntil') {
+  // Handle timestamp-changeduntil with -c flag
+  if (hasChangeduntil) {
     const now = new Date();
     // Round down to the nearest 10 seconds
     const roundedSeconds = Math.floor(now.getSeconds() / 10) * 10;
@@ -32,7 +36,7 @@ function main() {
     return;
   }
 
-  // Create user service
+  // Default: Create user service
   const userService = new UserService();
 
   // Create some users
