@@ -12,7 +12,7 @@
     "report": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node src/generate-report.js",
+        "command": "node generate-report.js",
         "cwd": "packages/utils"
       },
       "outputs": ["{projectRoot}/dist/report.txt"],
