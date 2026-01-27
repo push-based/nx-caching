@@ -13,8 +13,7 @@
     "lib": ["ES2020"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {}
+    "baseUrl": "."
   },
   "exclude": ["node_modules", "tmp"]
 }
